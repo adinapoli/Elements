@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>ElementsGame</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.Element">
+<summary>
+ Element is a generic element that can be combined.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.SmartSprite">
+
+</member>
+</members>
+</doc>

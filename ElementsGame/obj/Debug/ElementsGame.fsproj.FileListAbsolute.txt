@@ -1,0 +1,11 @@
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\ElementsGame.XML
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\ElementsGame.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\ElementsGame.pdb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\Microsoft.Xna.Framework.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\Microsoft.Xna.Framework.xml
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\obj\Debug\ElementsGame.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\obj\Debug\ElementsGame.pdb

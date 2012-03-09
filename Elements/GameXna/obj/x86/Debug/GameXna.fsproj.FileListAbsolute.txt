@@ -1,0 +1,13 @@
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Sprite.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\GameXna.XML
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\GameXna.exe
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\GameXna.pdb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\obj\x86\Debug\GameXna.fsprojResolveAssemblyReference.cache
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\obj\x86\Debug\GameXna.exe
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\obj\x86\Debug\GameXna.pdb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Backgrounds\bg_lab.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Backgrounds\bg_lab_1200_800.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\ElementsGame.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\ElementsGame.pdb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\ElementsGame.xml

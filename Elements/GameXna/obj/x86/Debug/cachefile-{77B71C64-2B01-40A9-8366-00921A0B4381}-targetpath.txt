@@ -1,0 +1,3 @@
+XnaGameContent\Sprite.xnb
+XnaGameContent\Media\Backgrounds\bg_lab.xnb
+XnaGameContent\Media\Backgrounds\bg_lab_1200_800.xnb

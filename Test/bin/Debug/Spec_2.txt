@@ -1,0 +1,22 @@
+
+
+Scenario: After removing 3 from a list it should not contain 3
+  - Given [1; 2; 3; 4; 5]
+     - When removing 3
+      => It shouldn't contain 3
+      => It should have length 4
+      => It should contain 4
+  ==> Result is: seq [1; 2; 4; 5]
+  ==> OK
+  ==> Time: 0.4070s
+
+
+
+Scenario: square(2) equals 4
+  - Given 2
+     - When calculating 
+      => It should equal 4
+  ==> Result is: 4
+  ==> OK
+  ==> Time: 0.0227s
+
