@@ -13,33 +13,32 @@ module Game =
         let graphicsDeviceManager = new GraphicsDeviceManager(this)
 
         //Allows null reference. We need this for .NET XNA interop
-        let mutable ball = Unchecked.defaultof<ElementObject>
-        let mutable background = Unchecked.defaultof<SmartSprite>
-        let mutable dx = 4.f
-        let mutable dy = 4.f
+        let mutable waterE = Unchecked.defaultof<Element>
+        let mutable earthE = Unchecked.defaultof<Element>
 
         override game.Initialize() =
             graphicsDeviceManager.GraphicsProfile <- GraphicsProfile.HiDef
             graphicsDeviceManager.PreferredBackBufferWidth <- 1260
-            graphicsDeviceManager.PreferredBackBufferHeight <- 762
+            graphicsDeviceManager.PreferredBackBufferHeight <- 740
             graphicsDeviceManager.IsFullScreen <- false
+            this.IsMouseVisible <- true
             graphicsDeviceManager.ApplyChanges() 
-            ball <- new ElementObject(game, "Sprite")
-            background <- new SmartSprite(game, "Media/Backgrounds/bg_lab_1200_800")
+            waterE <- new Element(game, "water")
+            earthE <- new Element(game, "earth")
+            earthE.Sprite.X <- 250.0f
+            earthE.Sprite.Y <- 300.0f
+            waterE.Sprite.X <- 200.0f
+            waterE.Sprite.Y <- 300.0f
             base.Initialize()
         
-        override game.Update gameTime = 
-            if ball.X > 608.f || ball.X < 0.f then dx <- -dx
-            if ball.Y > 448.f || ball.Y < 0.f then dy <- -dy
-        
-            ball.X <- ball.X + dx
-            ball.Y <- ball.Y + dy
+        //override game.Update gameTime = 
+            //NO-OP
 
 
         override game.Draw gameTime = 
-
-            background.Draw
-            ball.Draw
+            game.GraphicsDevice.Clear(Color.Gray)
+            waterE.Sprite.Draw
+            earthE.Sprite.Draw
 
     let game = new XnaGame()
     game.Run()

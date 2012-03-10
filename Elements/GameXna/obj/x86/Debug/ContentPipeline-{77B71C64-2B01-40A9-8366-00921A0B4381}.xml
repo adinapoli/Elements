@@ -28,6 +28,24 @@
       <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Backgrounds\bg_lab_1200_800.xnb</Output>
       <Time>2012-03-09T18:21:51.1464+01:00</Time>
     </Item>
+    <Item>
+      <Source>Media\Assets\water.png</Source>
+      <Name>Media\Assets\water</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\water.xnb</Output>
+      <Time>2012-03-10T14:08:36.6493+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Media\Assets\earth.png</Source>
+      <Name>Media\Assets\earth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\earth.xnb</Output>
+      <Time>2012-03-10T15:08:53.1033+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{77B71C64-2B01-40A9-8366-00921A0B4381}</ContentProjectGUID>

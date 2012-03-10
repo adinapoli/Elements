@@ -8,10 +8,76 @@
 <member name="">
 
 </member>
-<member name="T:Elements.Element">
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.Element.Element">
 <summary>
+ This class model a domain object, the Element.
  Element is a generic element that can be combined.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.Element.ElementRelations">
+<summary>
+ This dictionary keeps the state about element creation.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.Element">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -47,6 +113,12 @@
 
 </member>
 <member name="T:Elements.SmartSprite">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.Utils">
 
 </member>
 </members>

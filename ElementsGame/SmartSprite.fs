@@ -10,11 +10,16 @@ module SmartSprite =
         let mutable spriteBatch_ = new SpriteBatch(game.GraphicsDevice)
         let mutable x_:float32 = 0.0f
         let mutable y_:float32 = 0.0f
+        let mutable visible_ = true
 
         member this.X with get() = x_ and set x = x_ <- x
         member this.Y with get() = y_ and set y = y_ <- y
+        member this.IsVisible with get() = visible_ and set v = visible_ <- v
 
         member this.Draw =
-            spriteBatch_.Begin()
-            spriteBatch_.Draw(sprite_, Vector2(x_, y_), Color.White)
-            spriteBatch_.End()
+            match visible_ with
+            | true ->
+                spriteBatch_.Begin()
+                spriteBatch_.Draw(sprite_, Vector2(x_, y_), Color.White)
+                spriteBatch_.End()
+            | false -> ()

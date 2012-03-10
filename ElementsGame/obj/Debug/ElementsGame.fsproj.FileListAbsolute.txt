@@ -9,3 +9,4 @@ C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\Micro
 C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\bin\Debug\Microsoft.Xna.Framework.Graphics.xml
 C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\obj\Debug\ElementsGame.dll
 C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\obj\Debug\ElementsGame.pdb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\ElementsGame\obj\Debug\ElementsGame.fsprojResolveAssemblyReference.cache

@@ -11,3 +11,5 @@ C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\X
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\ElementsGame.dll
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\ElementsGame.pdb
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\ElementsGame.xml
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\water.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\earth.xnb
