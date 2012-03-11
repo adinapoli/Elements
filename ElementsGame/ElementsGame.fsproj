@@ -63,6 +63,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameComponent.fs" />
     <Compile Include="Utils.fs" />
     <Compile Include="SmartSprite.fs" />
     <Compile Include="Element.fs" />

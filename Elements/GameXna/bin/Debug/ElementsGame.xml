@@ -11,6 +11,41 @@
 <member name="">
 
 </member>
+<member name="T:Elements.Components">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.Element.EntitiesManager">
+<summary>
+ Who uses the Elements.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="">
 
 </member>
@@ -32,27 +67,32 @@
  Element is a generic element that can be combined.
 </summary>
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="T:Elements.Element.ElementRelations">
+<member name="F:Elements.Element.ElementRelations.relations_">
 <summary>
  This dictionary keeps the state about element creation.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Elements.Element.ElementRelations.FindMix(System.Tuple`2{System.String,System.String})">
+<summary>
+ Find wheter two elements, given a pair of names, form a brand
+ new element. Return a result wrapped into the option monad.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.Element.ElementMix">
+<summary>
+ Type synonym for a better understanding.
 </summary>
 </member>
 <member name="">
@@ -67,7 +107,50 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Elements.Element">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.Entities.GameEntity">
+<summary>
+ A base entity class.
+ Maintain a list of components, that can be retrieved, updated,
+ removed, etc 
+</summary>
+</member>
+<member name="T:Elements.Entities">
+
+</member>
+<member name="">
 
 </member>
 <member name="">
