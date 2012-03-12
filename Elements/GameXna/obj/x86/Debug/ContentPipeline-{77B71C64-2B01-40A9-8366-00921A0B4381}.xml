@@ -46,6 +46,24 @@
       <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\earth.xnb</Output>
       <Time>2012-03-10T15:08:53.1033+01:00</Time>
     </Item>
+    <Item>
+      <Source>Media\Assets\fire.png</Source>
+      <Name>Media\Assets\fire</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\fire.xnb</Output>
+      <Time>2012-03-12T19:29:37+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Media\Assets\air.png</Source>
+      <Name>Media\Assets\air</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\air.xnb</Output>
+      <Time>2012-03-12T19:39:51.9264+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{77B71C64-2B01-40A9-8366-00921A0B4381}</ContentProjectGUID>

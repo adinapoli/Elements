@@ -83,9 +83,11 @@ module Element =
 
         member this.Sprite with get() = elementSprite_
         member this.Name with get() = elementName_
+        
         member this.IsSelected 
             with get() = selected_
             and  set s = selected_ <- s
+        
         member this.Move(x : int32, y : int32) =
             elementSprite_.X <- x
             elementSprite_.Y <- y
@@ -104,11 +106,19 @@ module Element =
             this.Sprite.Update
 
 
+    (***************************************************************************
+     *
+     * ELEMENTS MANAGER
+     *
+     **************************************************************************)
+    /// This is who ACTUALLY manages elements.
     type ElementsManager() =
         
         inherit EntitiesManager() 
 
         member this.FindSelectedElement: Element option =
+
+            //Mental note, :?> performs a DYNAMIC cast, resolved at run-time
             let pred = (fun (e:GameEntity) -> (e :?> Element).IsSelected)
             let res = List.filter pred this.Entities
             match res with
@@ -118,9 +128,12 @@ module Element =
 
         override this.Update : unit =
 
-            //Find if at least one element is selected
+            // Find if at least one element is selected
+            // If yes, move it (it will follow the mouse)
+            // 32 is 64/2, where 64 is a element side (64 * 64 tile)
             match this.FindSelectedElement with
-                | Some(e) -> e.Move(Mouse.GetState().X, Mouse.GetState().Y)
+                | Some(e) -> e.Move(Mouse.GetState().X - 32, 
+                                    Mouse.GetState().Y - 32)
                 | None    -> ()
             
             //Updates components accordingly

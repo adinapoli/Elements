@@ -25,6 +25,8 @@ module Game =
             
             elementManager.Attach(new Element(game, "water", 200, 300))
             elementManager.Attach(new Element(game, "earth", 250, 300))
+            elementManager.Attach(new Element(game, "fire",  400, 200))
+            elementManager.Attach(new Element(game, "air",   400, 300))
             
             base.Initialize()
         

@@ -33,7 +33,7 @@
         * ELEMENT MANAGER
         *
         **************************************************************************)
-        /// A generic Entities Manager
+        /// A generic Entities Manager, who uses entities
         [<AbstractClass>]
         type EntitiesManager() =
         

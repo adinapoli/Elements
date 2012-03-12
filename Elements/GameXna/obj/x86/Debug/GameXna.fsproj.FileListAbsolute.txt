@@ -13,3 +13,5 @@ C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\E
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\ElementsGame.xml
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\water.xnb
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\earth.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\fire.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\air.xnb
