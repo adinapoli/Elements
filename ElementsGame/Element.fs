@@ -2,6 +2,7 @@
 
 open Microsoft.Xna.Framework
 open Microsoft.Xna.Framework.Graphics
+open Microsoft.Xna.Framework.Input
 open Elements.SmartSprite
 open Elements.Components
 open Elements.Entities
@@ -78,28 +79,49 @@ module Element =
             elementSprite_.Y <- y
             printf "%d" elementSprite_.X
         let elementName_:ElementName = name
+        let mutable selected_:bool = false
 
         member this.Sprite with get() = elementSprite_
         member this.Name with get() = elementName_
+        member this.IsSelected 
+            with get() = selected_
+            and  set s = selected_ <- s
+        member this.Move(x : int32, y : int32) =
+            elementSprite_.X <- x
+            elementSprite_.Y <- y
 
-        override this.Update = this.Sprite.Update
+        override this.Update = 
+            let mouseState = Mouse.GetState()
+            match mouseState.LeftButton = ButtonState.Pressed with
+            | true -> 
+                let collided = this.Sprite.Bounds.Contains(mouseState.X, mouseState.Y)
+                in match collided with
+                    | true ->  selected_ <- true
+                    | false -> ()
+            | false -> selected_ <- false
+
+            //Update the sprite
+            this.Sprite.Update
 
 
-    (***************************************************************************
-     *
-     * ELEMENT MANAGER
-     *
-     **************************************************************************)
-    /// Who uses the Elements.
-    type EntitiesManager() =
+    type ElementsManager() =
         
-        // Using standard "slow" purely functional lists,
-        // skipping premature optimization
-        let mutable entities_ : (GameEntity list) = []
+        inherit EntitiesManager() 
 
-        member this.Entities with get() = entities_
-        member this.Attach(entity : GameEntity) : unit =
-            entities_ <- entity :: entities_
+        member this.FindSelectedElement: Element option =
+            let pred = (fun (e:GameEntity) -> (e :?> Element).IsSelected)
+            let res = List.filter pred this.Entities
+            match res with
+                | head :: tail -> Some((head :?> Element))
+                | [] -> None
 
-        member this.Update : unit =
-            List.iter (fun (e:GameEntity) -> e.Update) entities_
+
+        override this.Update : unit =
+
+            //Find if at least one element is selected
+            match this.FindSelectedElement with
+                | Some(e) -> e.Move(Mouse.GetState().X, Mouse.GetState().Y)
+                | None    -> ()
+            
+            //Updates components accordingly
+            List.iter (fun (e:GameEntity) -> e.Update) this.Entities

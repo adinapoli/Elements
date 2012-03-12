@@ -13,7 +13,7 @@ module Game =
         let graphicsDeviceManager = new GraphicsDeviceManager(this)
 
         // Manages elements entities
-        let elementManager = new EntitiesManager()
+        let elementManager = new ElementsManager()
 
         override game.Initialize() =
             graphicsDeviceManager.GraphicsProfile <- GraphicsProfile.HiDef

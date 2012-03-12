@@ -29,10 +29,14 @@
 <member name="">
 
 </member>
-<member name="T:Elements.Element.EntitiesManager">
-<summary>
- Who uses the Elements.
-</summary>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -134,6 +138,26 @@
 <member name="">
 
 </member>
+<member name="T:Elements.Entities.EntitiesManager">
+<summary>
+ A generic Entities Manager
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="">
 
 </member>
@@ -148,6 +172,18 @@
 </summary>
 </member>
 <member name="T:Elements.Entities">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.HUD">
 
 </member>
 <member name="">
