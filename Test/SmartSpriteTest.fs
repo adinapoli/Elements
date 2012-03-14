@@ -3,7 +3,6 @@
 module SmartSpriteTest =
 
     open NaturalSpec
-    open Elements.SmartSprite
 
     [<Scenario>]
     let ``After removing 3 from a list it should not contain 3``() =

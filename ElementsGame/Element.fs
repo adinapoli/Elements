@@ -3,9 +3,9 @@
 open Microsoft.Xna.Framework
 open Microsoft.Xna.Framework.Graphics
 open Microsoft.Xna.Framework.Input
-open Elements.SmartSprite
 open Elements.Components
 open Elements.Entities
+open Elements.Prefabs
 open Elements.Utils
 open System.Collections.Generic
 
@@ -17,18 +17,32 @@ module Element =
      * ELEMENT SPRITE
      *
      **************************************************************************)
-    type ElementSprite(game: Game, spritePath : string) =
-        inherit SmartSprite(game, spritePath)
+    type ElementSprite(game: Game, id : string) =
+        inherit SmartSprite(game, "Media/Assets/" + id)
+        
+        let id_ = id
         member this.Update = (this :> IGameComponent).Update
         member this.Id = (this :> IGameComponent).Id
 
         interface IGameComponent with
             member this.Update = this.Draw
-            member this.Id = (spritePath.Split '/') |> (fun x -> x.[x.Length-1])
+            member this.Id = id_
 
     /// Type synonym for a better understanding.
     type ElementMix = string * string
     type ElementName = string
+
+    (***************************************************************************
+     *
+     * ELEMENT CAPTION
+     *
+     **************************************************************************)
+     type ElementCaption(id : string, game: Game, fontName : string) as this =
+        inherit TextComponent(id, game, fontName)
+
+        member this.Move(x : int32, y : int32) =
+            this.X <- x
+            this.Y <- y + 64
     
 
     (***************************************************************************
@@ -69,19 +83,23 @@ module Element =
      **************************************************************************)
     /// This class model a domain object, the Element.
     /// Element is a generic element that can be combined.
-    type Element(game: Game, name : string, x: int32, y: int32) =
+    type Element(game: Game, name : string, x: int32, y: int32) as this =
         inherit GameEntity(name + "Entity")
         
-        static let assetPath:string = "Media/Assets/"
-        let mutable elementSprite_:ElementSprite = new ElementSprite(game, assetPath + name)
         do
-            elementSprite_.X <- x
-            elementSprite_.Y <- y
-            printf "%d" elementSprite_.X
+            let elementSprite_:ElementSprite = new ElementSprite(game, name)
+            let elementCaption_:ElementCaption = new ElementCaption("eCaption", game, "ElementCaption")
+            elementCaption_.Text <- name
+            elementSprite_.Move(x,y)
+            elementCaption_.Move(x, y)
+            this.Attach(elementSprite_)
+            this.Attach(elementCaption_)
+        
         let elementName_:ElementName = name
         let mutable selected_:bool = false
 
-        member this.Sprite with get() = elementSprite_
+        member this.Sprite 
+            with get() = (this.ComponentsByType("sprite") |> Seq.head) :?> ElementSprite
         member this.Name with get() = elementName_
         
         member this.IsSelected 
@@ -89,21 +107,21 @@ module Element =
             and  set s = selected_ <- s
         
         member this.Move(x : int32, y : int32) =
-            elementSprite_.X <- x
-            elementSprite_.Y <- y
+            let fn = (fun (c :IGameComponent) -> (c :?> IMovable).Move(x,y))
+            Seq.iter fn this.Components.Values
 
         override this.Update = 
             let mouseState = Mouse.GetState()
             match mouseState.LeftButton = ButtonState.Pressed with
             | true -> 
                 let collided = this.Sprite.Bounds.Contains(mouseState.X, mouseState.Y)
-                in match collided with
+                in match collided with 
                     | true ->  selected_ <- true
                     | false -> ()
             | false -> selected_ <- false
 
             //Update the sprite
-            this.Sprite.Update
+            Seq.iter (fun (e:IGameComponent) -> e.Update) this.Components.Values
 
 
     (***************************************************************************

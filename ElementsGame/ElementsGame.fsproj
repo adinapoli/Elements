@@ -64,8 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameComponent.fs" />
+    <Compile Include="Prefabs.fs" />
     <Compile Include="Utils.fs" />
-    <Compile Include="SmartSprite.fs" />
     <Compile Include="Element.fs" />
     <Compile Include="HUD.fs" />
   </ItemGroup>

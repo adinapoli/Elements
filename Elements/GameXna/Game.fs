@@ -2,7 +2,6 @@
 
 open Microsoft.Xna.Framework
 open Microsoft.Xna.Framework.Graphics
-open Elements.SmartSprite
 open Elements.Element
 
 module Game =
@@ -21,6 +20,7 @@ module Game =
             graphicsDeviceManager.PreferredBackBufferHeight <- 735
             graphicsDeviceManager.IsFullScreen <- false
             this.IsMouseVisible <- true
+            this.Window.Title <- "Elements"
             graphicsDeviceManager.ApplyChanges()
             
             elementManager.Attach(new Element(game, "water", 200, 300))

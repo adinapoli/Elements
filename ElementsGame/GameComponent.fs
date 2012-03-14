@@ -1,16 +1,21 @@
 ﻿namespace Elements
 
     module Components =
+
+
+        type IMovable =
+            abstract member Move : x:int32 * y:int32 -> unit
         
         type IGameComponent =
             abstract member Update : unit
             abstract member Id : string
+            abstract member Type : string
     
     
     module Entities =
 
         open Components
-
+        open System.Collections.Generic
 
         /// A base entity class.
         /// Maintain a list of components, that can be retrieved, updated,
@@ -19,11 +24,24 @@
         type GameEntity(id : string) =
 
             let id_ = id
-            let mutable components_: (IGameComponent list) = []
+            let mutable components_: (Dictionary<string,IGameComponent>) = Dictionary()
             member this.Id with get() = id_
             member this.Components with get() = components_
             member this.Attach(c : IGameComponent):unit = 
-                (c :: components_) |> ignore
+                components_.Add(c.Id, c)
+
+
+            member this.Component(cid : string) =
+                try
+                    Some(components_.[cid])
+                with
+                    | :? KeyNotFoundException -> None
+
+
+            member this.ComponentsByType(tp : string) =
+                let fn = (fun (c:IGameComponent) -> c.Type = tp)
+                Seq.filter fn components_.Values          
+
 
             abstract member Update : unit
 
