@@ -32,13 +32,12 @@ module Prefabs =
                 y_ <- y
 
         interface IGameComponent with
-            member this.Update = 
-                this.Draw
-            
+            member this.Update (gameTime : GameTime) = 
+                this.Draw gameTime
             member this.Id = id_
             member this.Type = "sprite"
 
-        member this.Draw =
+        member this.Draw (gameTime : GameTime) =
             match visible_ with
             | true ->
                 spriteBatch_.Begin()
@@ -52,7 +51,7 @@ module Prefabs =
     // in it's own SpriteBatch
     type TextComponent(id : string, game : Game, fontName : string) =
 
-        let mutable id_ : string = id
+        let id_ : string = id
         let mutable text_:string = ""
         let assetPath_ : string = "Media/Fonts/"
         let mutable font_ = game.Content.Load<SpriteFont>(assetPath_ + fontName)
@@ -66,10 +65,10 @@ module Prefabs =
         member this.X with get() = x_ and set x = x_ <- x
         member this.Y with get() = y_ and set y = y_ <- y
 
-        member this.Update = (this :> IGameComponent).Update
-        member this.Id     = (this :> IGameComponent).Id
-        member this.Type   = (this :> IGameComponent).Type
-        member this.Move   = (this :> IMovable).Move
+        member this.Update gt = (this :> IGameComponent).Update gt
+        member this.Id        = (this :> IGameComponent).Id
+        member this.Type      = (this :> IGameComponent).Type
+        member this.Move      = (this :> IMovable).Move
 
         interface IMovable with
             member this.Move(x:int32, y:int32) =
@@ -77,7 +76,7 @@ module Prefabs =
                 y_ <- y
 
         interface IGameComponent with
-            member this.Update = 
+            member this.Update (gameTime : GameTime) = 
                 spriteBatch_.Begin()
                 spriteBatch_.DrawString(font_, 
                                         text_, 
@@ -85,6 +84,5 @@ module Prefabs =
                                         color_);
                 spriteBatch_.End()
             member this.Id = id_
-            member this.Type = "text"
-             
+            member this.Type = "text"            
 

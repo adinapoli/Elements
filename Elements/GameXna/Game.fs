@@ -36,7 +36,7 @@ module Game =
 
         override game.Draw gameTime = 
             game.GraphicsDevice.Clear(Color.Gray)
-            elementManager.Update
+            elementManager.Update gameTime
 
     let game = new XnaGame()
     game.Run()

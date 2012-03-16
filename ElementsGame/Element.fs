@@ -25,7 +25,7 @@ module Element =
         member this.Id = (this :> IGameComponent).Id
 
         interface IGameComponent with
-            member this.Update = this.Draw
+            member this.Update gt = this.Draw gt
             member this.Id = id_
 
     /// Type synonym for a better understanding.
@@ -110,7 +110,7 @@ module Element =
             let fn = (fun (c :IGameComponent) -> (c :?> IMovable).Move(x,y))
             Seq.iter fn this.Components.Values
 
-        override this.Update = 
+        override this.Update (gameTime : GameTime) = 
             let mouseState = Mouse.GetState()
             match mouseState.LeftButton = ButtonState.Pressed with
             | true -> 
@@ -121,7 +121,7 @@ module Element =
             | false -> selected_ <- false
 
             //Update the sprite
-            Seq.iter (fun (e:IGameComponent) -> e.Update) this.Components.Values
+            Seq.iter (fun (e:IGameComponent) -> e.Update gameTime) this.Components.Values
 
 
     (***************************************************************************
@@ -144,7 +144,7 @@ module Element =
                 | [] -> None
 
 
-        override this.Update : unit =
+        override this.Update (gameTime : GameTime) : unit =
 
             // Find if at least one element is selected
             // If yes, move it (it will follow the mouse)
@@ -155,4 +155,4 @@ module Element =
                 | None    -> ()
             
             //Updates components accordingly
-            List.iter (fun (e:GameEntity) -> e.Update) this.Entities
+            List.iter (fun (e:GameEntity) -> e.Update gameTime) this.Entities

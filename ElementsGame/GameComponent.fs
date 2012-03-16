@@ -1,13 +1,14 @@
 ﻿namespace Elements
 
-    module Components =
+open Microsoft.Xna.Framework
 
+    module Components =
 
         type IMovable =
             abstract member Move : x:int32 * y:int32 -> unit
         
         type IGameComponent =
-            abstract member Update : unit
+            abstract member Update : GameTime -> unit
             abstract member Id : string
             abstract member Type : string
     
@@ -43,7 +44,7 @@
                 Seq.filter fn components_.Values          
 
 
-            abstract member Update : unit
+            abstract member Update : GameTime -> unit
 
 
         (***************************************************************************
@@ -63,4 +64,4 @@
             member this.Attach(entity : GameEntity) : unit =
                 entities_ <- entity :: entities_
 
-            abstract member Update : unit
+            abstract member Update : GameTime -> unit
