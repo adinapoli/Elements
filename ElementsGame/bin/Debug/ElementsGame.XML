@@ -20,6 +20,12 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Elements.Components">
 
 </member>
@@ -36,6 +42,9 @@
 <summary>
  This is who ACTUALLY manages elements.
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -105,28 +114,10 @@
 <member name="">
 
 </member>
-<member name="">
-
-</member>
 <member name="T:Elements.Element.ElementMix">
 <summary>
  Type synonym for a better understanding.
 </summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
 </member>
 <member name="">
 
@@ -152,10 +143,16 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="T:Elements.Entities.EntitiesManager">
 <summary>
  A generic Entities Manager, who uses entities
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -230,7 +227,19 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="T:Elements.HUD">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
 
 </member>
 <member name="">

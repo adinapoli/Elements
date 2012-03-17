@@ -25,26 +25,33 @@ module Prefabs =
         member this.Move(x,y) = (this :> IMovable).Move(x,y)
         member this.Type   = (this :> IGameComponent).Type
         member this.Id   = (this :> IGameComponent).Id
+        member this.Draw (gameTime : GameTime) = 
+            (this :> IDrawable).Draw gameTime
 
+
+        (* INTERFACE IMPLEMENTATIONS *)
         interface IMovable with
             member this.Move(x:int32, y:int32) =
                 x_ <- x
                 y_ <- y
 
+
         interface IGameComponent with
-            member this.Update (gameTime : GameTime) = 
-                this.Draw gameTime
+            member this.Update (gameTime : GameTime) = ()
             member this.Id = id_
             member this.Type = "sprite"
 
-        member this.Draw (gameTime : GameTime) =
-            match visible_ with
-            | true ->
-                spriteBatch_.Begin()
-                spriteBatch_.Draw(sprite_, Vector2(float32 x_, float32 y_), Color.White)
-                spriteBatch_.End()
-            | false -> ()
-    
+
+        interface IDrawable with
+            member this.Draw (gameTime : GameTime) =
+                match visible_ with
+                | true ->
+                    spriteBatch_.Begin()
+                    spriteBatch_.Draw(sprite_, Vector2(float32 x_, float32 y_), Color.White)
+                    spriteBatch_.End()
+                | false -> ()
+
+
 
 
     // A simple text component that can be displayed on screen,
@@ -64,25 +71,30 @@ module Prefabs =
         member this.Font with get() = font_ and set f = font_ <- f
         member this.X with get() = x_ and set x = x_ <- x
         member this.Y with get() = y_ and set y = y_ <- y
-
-        member this.Update gt = (this :> IGameComponent).Update gt
+        
         member this.Id        = (this :> IGameComponent).Id
         member this.Type      = (this :> IGameComponent).Type
         member this.Move      = (this :> IMovable).Move
+        member this.Draw   gt = (this :> IDrawable).Draw gt 
+        member this.Update gt = (this :> IGameComponent).Update gt
 
+
+        (* INTERFACE IMPLEMENTATIONS *)
         interface IMovable with
             member this.Move(x:int32, y:int32) =
                 x_ <- x
                 y_ <- y
 
-        interface IGameComponent with
-            member this.Update (gameTime : GameTime) = 
+        interface IDrawable with
+            member this.Draw (gameTime : GameTime) =
                 spriteBatch_.Begin()
                 spriteBatch_.DrawString(font_, 
                                         text_, 
                                         new Vector2(float32 x_, float32 y_), 
-                                        color_);
+                                        color_)
                 spriteBatch_.End()
-            member this.Id = id_
-            member this.Type = "text"            
 
+        interface IGameComponent with
+            member this.Update (gameTime : GameTime) = ()
+            member this.Id = id_
+            member this.Type = "text"

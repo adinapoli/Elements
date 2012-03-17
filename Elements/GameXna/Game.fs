@@ -30,13 +30,13 @@ module Game =
             
             base.Initialize()
         
-        //override game.Update gameTime = 
-            //NO-OP
+        override game.Update gameTime = 
+            elementManager.Update gameTime
 
 
         override game.Draw gameTime = 
             game.GraphicsDevice.Clear(Color.Gray)
-            elementManager.Update gameTime
+            elementManager.Draw gameTime
 
     let game = new XnaGame()
     game.Run()

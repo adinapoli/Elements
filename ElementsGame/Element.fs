@@ -19,14 +19,6 @@ module Element =
      **************************************************************************)
     type ElementSprite(game: Game, id : string) =
         inherit SmartSprite(game, "Media/Assets/" + id)
-        
-        let id_ = id
-        member this.Update = (this :> IGameComponent).Update
-        member this.Id = (this :> IGameComponent).Id
-
-        interface IGameComponent with
-            member this.Update gt = this.Draw gt
-            member this.Id = id_
 
     /// Type synonym for a better understanding.
     type ElementMix = string * string
@@ -37,7 +29,7 @@ module Element =
      * ELEMENT CAPTION
      *
      **************************************************************************)
-     type ElementCaption(id : string, game: Game, fontName : string) as this =
+     type ElementCaption(id : string, game: Game, fontName : string) =
         inherit TextComponent(id, game, fontName)
 
         member this.Move(x : int32, y : int32) =
@@ -122,6 +114,19 @@ module Element =
 
             //Update the sprite
             Seq.iter (fun (e:IGameComponent) -> e.Update gameTime) this.Components.Values
+
+        
+        //Tries to call the draw function for every component.
+        //Of course, this can fail, since not every IGameComponent must
+        //implement also the IDrawable interface. If some cast fails,
+        //just ignore it.
+        override this.Draw (gameTime : GameTime) =
+            for (e:IGameComponent) in this.Components.Values do
+                try
+                    (e :?> IDrawable).Draw gameTime
+                with
+                //If the cast fails, ignore it.
+                | :? System.InvalidCastException -> ()
 
 
     (***************************************************************************

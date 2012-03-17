@@ -34,3 +34,4 @@ open Elements.Entities
             inherit GameEntity("HudEntity")
 
             override this.Update (gameTime : GameTime) : unit = ()
+            override this.Draw   (gameTime : GameTime) : unit = ()

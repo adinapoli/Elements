@@ -6,6 +6,9 @@ open Microsoft.Xna.Framework
 
         type IMovable =
             abstract member Move : x:int32 * y:int32 -> unit
+
+        type IDrawable =
+            abstract member Draw : GameTime -> unit
         
         type IGameComponent =
             abstract member Update : GameTime -> unit
@@ -45,7 +48,7 @@ open Microsoft.Xna.Framework
 
 
             abstract member Update : GameTime -> unit
-
+            abstract member Draw   : GameTime -> unit
 
         (***************************************************************************
          *
@@ -65,3 +68,6 @@ open Microsoft.Xna.Framework
                 entities_ <- entity :: entities_
 
             abstract member Update : GameTime -> unit
+
+            member this.Draw (gameTime : GameTime) =
+                List.iter (fun (e:GameEntity) -> e.Draw gameTime) this.Entities
