@@ -24,6 +24,8 @@ module Element =
     type ElementMix = string * string
     type ElementName = string
 
+
+
     (***************************************************************************
      *
      * ELEMENT CAPTION
@@ -32,9 +34,10 @@ module Element =
      type ElementCaption(id : string, game: Game, fontName : string) =
         inherit TextComponent(id, game, fontName)
 
-        member this.Move(x : int32, y : int32) =
-            this.X <- x
-            this.Y <- y + 64
+        interface IMovable with
+            member this.Move(x : int32, y : int32) =
+                this.X <- x
+                this.Y <- y + 64
     
 
     (***************************************************************************

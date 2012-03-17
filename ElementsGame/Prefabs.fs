@@ -69,6 +69,7 @@ module Prefabs =
         
         member this.Text with get() = text_ and set t = text_ <- t
         member this.Font with get() = font_ and set f = font_ <- f
+        member this.Sprite with get() = spriteBatch_
         member this.X with get() = x_ and set x = x_ <- x
         member this.Y with get() = y_ and set y = y_ <- y
         

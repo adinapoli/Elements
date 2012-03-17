@@ -16,3 +16,4 @@ C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\X
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\fire.xnb
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\air.xnb
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Fonts\ElementCaption.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Fonts\DebugHUD.xnb

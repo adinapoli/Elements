@@ -73,6 +73,15 @@
       <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Fonts\ElementCaption.xnb</Output>
       <Time>2012-03-12T20:32:12.7176+01:00</Time>
     </Item>
+    <Item>
+      <Source>Media\Fonts\DebugHUD.spritefont</Source>
+      <Name>Media\Fonts\DebugHUD</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Fonts\DebugHUD.xnb</Output>
+      <Time>2012-03-17T17:30:10.5906+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{77B71C64-2B01-40A9-8366-00921A0B4381}</ContentProjectGUID>
