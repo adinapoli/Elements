@@ -1,0 +1,9 @@
+XnaGameContent\Sprite.xnb
+XnaGameContent\Media\Backgrounds\bg_lab.xnb
+XnaGameContent\Media\Backgrounds\bg_lab_1200_800.xnb
+XnaGameContent\Media\Assets\water.xnb
+XnaGameContent\Media\Assets\earth.xnb
+XnaGameContent\Media\Assets\fire.xnb
+XnaGameContent\Media\Assets\air.xnb
+XnaGameContent\Media\Fonts\ElementCaption.xnb
+XnaGameContent\Media\Fonts\DebugHUD.xnb

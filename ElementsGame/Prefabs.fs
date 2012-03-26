@@ -3,6 +3,9 @@
 open Microsoft.Xna.Framework
 open Microsoft.Xna.Framework.Graphics
 open Elements.Components
+open Elements.Entities
+open Ruminate.GUI.Content
+open Ruminate.GUI.Framework
 
 module Prefabs =
 
@@ -99,3 +102,20 @@ module Prefabs =
             member this.Update (gameTime : GameTime) = ()
             member this.Id = id_
             member this.Type = "text"
+
+
+
+    type GuiContainer(game : Game) =
+        inherit GameEntity("guiContainer")
+
+        //Specific GUI library coupling
+        let gui_:Gui = new Gui(game)
+        do gui_.SetTheme(new EmbeddedTheme(gui_))
+
+        member this.AddElement(guiElement) =
+            gui_.AddElement(guiElement)
+        
+        override this.Update (gameTime : GameTime) : unit = 
+            gui_.Update()
+        override this.Draw (gameTime : GameTime) : unit = 
+            gui_.Draw()

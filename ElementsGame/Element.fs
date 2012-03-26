@@ -8,6 +8,7 @@ open Elements.Entities
 open Elements.Prefabs
 open Elements.Utils
 open System.Collections.Generic
+open System.Xml.XPath
 
 module Element =
 
@@ -46,12 +47,22 @@ module Element =
      *
      **************************************************************************)
     type ElementRelations() =
-    /// This dictionary keeps the state about element creation.
+        /// This dictionary keeps the state about element creation.
         let mutable relations_:Dictionary<ElementMix, ElementName> = Dictionary()
 
         // Data entry. This will be moved in an external source.
-        let LoadData = do
-            relations_.Add(("wind", "earth"), "sand")
+        member this.LoadData = do
+            let doc = XPathDocument(@"XnaGameContent\Relations.xml").CreateNavigator()
+            let relations = doc.Select("//relation")
+
+            while(relations.MoveNext()) do
+                relations.Current.MoveToFirstChild() |> ignore
+                let e1 = relations.Current.Value
+                relations.Current.MoveToNext() |> ignore
+                let e2 = relations.Current.Value
+                relations.Current.MoveToNext() |> ignore
+                let e3 = relations.Current.Value
+                relations_.Add((e1, e2), e3)
 
         member this.Relations with get() = relations_
     
@@ -79,7 +90,7 @@ module Element =
     /// This class model a domain object, the Element.
     /// Element is a generic element that can be combined.
     type Element(game: Game, name : string, x: int32, y: int32) as this =
-        inherit GameEntity(name + "Entity")
+        inherit GameEntity(name)
         
         do
             let elementSprite_:ElementSprite = new ElementSprite(game, name)
@@ -104,6 +115,13 @@ module Element =
         member this.Move(x : int32, y : int32) =
             let fn = (fun (c :IGameComponent) -> (c :?> IMovable).Move(x,y))
             Seq.iter fn this.Components.Values
+
+
+        member this.CollideWith(e : Element) =
+            match (this.Sprite.IsVisible && e.Sprite.IsVisible) with
+                | true  -> this.Sprite.Bounds.Intersects(e.Sprite.Bounds)
+                | false -> false
+
 
         override this.Update (gameTime : GameTime) = 
             let mouseState = Mouse.GetState()
@@ -132,35 +150,72 @@ module Element =
                 | :? System.InvalidCastException -> ()
 
 
+
     (***************************************************************************
      *
      * ELEMENTS MANAGER
      *
      **************************************************************************)
     /// This is who ACTUALLY manages elements.
-    type ElementsManager() =
-        
-        inherit EntitiesManager() 
+    type ElementsManager(game : Game) =
+        inherit EntitiesManager()
+
+        let game_:Game = game
+        let elementRelations_:ElementRelations = new ElementRelations()
+        do elementRelations_.LoadData
+        let mutable lastSelectedElement_: Element option = None
+        let mutable discoveredElements_:int = 4
+
+        member this.Game = game_
+
+        member this.DiscoveredElements 
+            with get() = discoveredElements_
 
         member this.FindSelectedElement: Element option =
-
             //Mental note, :?> performs a DYNAMIC cast, resolved at run-time
             let pred = (fun (e:GameEntity) -> (e :?> Element).IsSelected)
-            let res = List.filter pred this.Entities
+            let res = Seq.filter pred this.Entities.Values |> Seq.toList
             match res with
                 | head :: tail -> Some((head :?> Element))
                 | [] -> None
 
 
         override this.Update (gameTime : GameTime) : unit =
-
             // Find if at least one element is selected
             // If yes, move it (it will follow the mouse)
             // 32 is 64/2, where 64 is a element side (64 * 64 tile)
             match this.FindSelectedElement with
-                | Some(e) -> e.Move(Mouse.GetState().X - 32, 
-                                    Mouse.GetState().Y - 32)
-                | None    -> ()
+                | Some(e) -> 
+                    do
+                        e.Move(Mouse.GetState().X - 32, 
+                               Mouse.GetState().Y - 32)
+                        lastSelectedElement_ <- Some(e)
+                | None    -> 
+                    match lastSelectedElement_ with
+                        | Some(ls) ->
+                             //Check collision with any other element
+                             //To determine whether a new element must be added.
+                             let pred = (fun (e:GameEntity) -> 
+                                             (e :?> Element).CollideWith(ls))
+                             let collidedElements = this.Entities.Values
+                                                    |> Seq.filter (fun e -> e.Id.Equals(ls.Id) |> not)  
+                                                    |> Seq.filter pred
+                                                    |> Seq.toList
+                             let attachFn = (fun (e:GameEntity) ->
+                                                match elementRelations_.FindMix (e.Id, ls.Id) with
+                                                    |Some(res) -> 
+                                                        let x = ls.Sprite.X
+                                                        let y = ls.Sprite.Y
+                                                        //Remove matched elements
+                                                        (e :?> Element).Sprite.IsVisible <- false
+                                                        ls.Sprite.IsVisible <- false
+                                                        this.Detach(e.Id)
+                                                        this.Detach(ls.Id)
+                                                        this.Attach(new Element(game_, res, x, y))
+                                                        discoveredElements_ <- discoveredElements_ + 1
+                                                    |None -> ())
+                             List.iter attachFn collidedElements
+                         | None -> ()
             
             //Updates components accordingly
-            List.iter (fun (e:GameEntity) -> e.Update gameTime) this.Entities
+            Seq.iter (fun (e:GameEntity) -> e.Update gameTime) this.Entities.Values

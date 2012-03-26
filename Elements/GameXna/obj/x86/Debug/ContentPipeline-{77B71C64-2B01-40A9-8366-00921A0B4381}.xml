@@ -2,15 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Sprite.png</Source>
-      <Name>Sprite</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Sprite.xnb</Output>
-      <Time>2012-03-09T18:21:10.5934+01:00</Time>
-    </Item>
-    <Item>
       <Source>Media\Backgrounds\bg_lab.png</Source>
       <Name>Media\Backgrounds\bg_lab</Name>
       <Importer>TextureImporter</Importer>
@@ -35,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\water.xnb</Output>
-      <Time>2012-03-10T14:08:36.6493+01:00</Time>
+      <Time>2012-03-25T11:12:35+02:00</Time>
     </Item>
     <Item>
       <Source>Media\Assets\earth.png</Source>
@@ -44,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\earth.xnb</Output>
-      <Time>2012-03-10T15:08:53.1033+01:00</Time>
+      <Time>2012-03-25T11:17:31+02:00</Time>
     </Item>
     <Item>
       <Source>Media\Assets\fire.png</Source>
@@ -53,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\fire.xnb</Output>
-      <Time>2012-03-12T19:29:37+01:00</Time>
+      <Time>2012-03-25T11:12:02+02:00</Time>
     </Item>
     <Item>
       <Source>Media\Assets\air.png</Source>
@@ -62,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\air.xnb</Output>
-      <Time>2012-03-12T19:39:51.9264+01:00</Time>
+      <Time>2012-03-25T11:10:47+02:00</Time>
     </Item>
     <Item>
       <Source>Media\Fonts\ElementCaption.spritefont</Source>
@@ -81,6 +72,60 @@
       <Options>None</Options>
       <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Fonts\DebugHUD.xnb</Output>
       <Time>2012-03-17T17:30:10.5906+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Media\Assets\sand.png</Source>
+      <Name>Media\Assets\sand</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\sand.xnb</Output>
+      <Time>2012-03-25T11:11:35+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Media\Fonts\hud_caption.spritefont</Source>
+      <Name>Media\Fonts\hud_caption</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Fonts\hud_caption.xnb</Output>
+      <Time>2012-03-25T19:23:00.4542+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Media\HUD\add_element.png</Source>
+      <Name>Media\HUD\add_element</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\HUD\add_element.xnb</Output>
+      <Time>2012-03-25T20:36:32+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Media\HUD\trash_element.png</Source>
+      <Name>Media\HUD\trash_element</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\HUD\trash_element.xnb</Output>
+      <Time>2012-03-26T12:55:11+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Media\Backgrounds\bg_wood_1200_800.png</Source>
+      <Name>Media\Backgrounds\bg_wood_1200_800</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Backgrounds\bg_wood_1200_800.xnb</Output>
+      <Time>2012-03-26T15:06:27.3398+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Media\HUD\add_element_overlay.png</Source>
+      <Name>Media\HUD\add_element_overlay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\HUD\add_element_overlay.xnb</Output>
+      <Time>2012-03-26T16:52:35+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

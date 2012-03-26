@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
-  <TopNode>[0-1008]C:\Users\alfredo-windows\Programmazione\F#\Elements\Test\bin\Debug\Test.dll</TopNode>
-  <SelectedNode>[0-1009]Test</SelectedNode>
+  <TopNode>[0-1009]C:\Users\alfredo-windows\Programmazione\F#\Elements\Test\bin\Debug\Test.dll</TopNode>
+  <SelectedNode>[0-1010]Test</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
-    <Node UniqueName="[0-1008]C:\Users\alfredo-windows\Programmazione\F#\Elements\Test\bin\Debug\Test.dll" Expanded="true" />
-    <Node UniqueName="[0-1009]Test" Expanded="true" />
+    <Node UniqueName="[0-1009]C:\Users\alfredo-windows\Programmazione\F#\Elements\Test\bin\Debug\Test.dll" Expanded="true" />
+    <Node UniqueName="[0-1010]Test" Expanded="true" />
     <Node UniqueName="[0-1000]Test.HierarchyTest" Expanded="true" />
-    <Node UniqueName="[0-1005]Test.NaturalSpecSample" Expanded="true" />
-    <Node UniqueName="[0-1003]Test.SmartSpriteTest" Expanded="true" />
+    <Node UniqueName="[0-1006]Test.NaturalSpecSample" Expanded="true" />
+    <Node UniqueName="[0-1004]Test.SmartSpriteTest" Expanded="true" />
   </Nodes>
 </VisualState>

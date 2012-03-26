@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+<!DOCTYPE relations [
+  <!ELEMENT relation (element)*>
+  <!ELEMENT element (#PCDATA)>
+  <!ATTLIST element type (result) #IMPLIED>
+]>
+-->
+
+<relations>
+  <relation>
+    <element>earth</element>
+    <element>air</element>
+    <element type="result">sand</element>
+  </relation>
+
+  <relation>
+    <element>sand</element>
+    <element>air</element>
+    <element type="result">sandstorm</element>
+  </relation>
+</relations>
+

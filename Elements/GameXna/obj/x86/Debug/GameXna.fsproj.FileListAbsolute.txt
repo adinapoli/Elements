@@ -1,4 +1,3 @@
-C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Sprite.xnb
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\GameXna.XML
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\GameXna.exe
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\GameXna.pdb
@@ -17,3 +16,11 @@ C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\X
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\air.xnb
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Fonts\ElementCaption.xnb
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Fonts\DebugHUD.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Relations.xml
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Assets\sand.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Fonts\hud_caption.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\HUD\add_element.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\HUD\trash_element.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Backgrounds\bg_wood_1200_800.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\HUD\add_element_overlay.xnb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\Ruminate.dll

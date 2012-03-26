@@ -35,7 +35,7 @@ open Microsoft.Xna.Framework
                 components_.Add(c.Id, c)
 
 
-            member this.Component(cid : string) =
+            member this.Component(cid : string): IGameComponent option =
                 try
                     Some(components_.[cid])
                 with
@@ -44,7 +44,16 @@ open Microsoft.Xna.Framework
 
             member this.ComponentsByType(tp : string) =
                 let fn = (fun (c:IGameComponent) -> c.Type = tp)
-                Seq.filter fn components_.Values          
+                Seq.filter fn components_.Values   
+              
+              
+            member this.ComponentById(id : string) : IGameComponent option =
+                let fn = (fun (c:IGameComponent) -> c.Id = id)
+                
+                try
+                    Seq.filter fn components_.Values |> Seq.head  |> Some
+                with
+                    | :? System.ArgumentNullException -> None 
 
 
             abstract member Update : GameTime -> unit
@@ -61,13 +70,25 @@ open Microsoft.Xna.Framework
         
             // Using standard "slow" purely functional lists,
             // skipping premature optimization
-            let mutable entities_ : (GameEntity list) = []
+            let mutable entities_ : (Dictionary<string,GameEntity>) = Dictionary()
 
             member this.Entities with get() = entities_
-            member this.Attach(entity : GameEntity) : unit =
-                entities_ <- entity :: entities_
+            member this.Attach(e : GameEntity) : unit = 
+                entities_.Add(e.Id, e)
+
+            member this.Detach(entityId : string) : unit =
+                try 
+                    entities_.Remove(entityId) |> ignore
+                with 
+                    | :? System.ArgumentNullException -> ()
+
+            member this.Entity(eid : string): GameEntity option =
+                try
+                    Some(entities_.[eid])
+                with
+                    | :? KeyNotFoundException -> None
 
             abstract member Update : GameTime -> unit
 
             member this.Draw (gameTime : GameTime) =
-                List.iter (fun (e:GameEntity) -> e.Draw gameTime) this.Entities
+                Seq.iter (fun (e:GameEntity) -> e.Draw gameTime) this.Entities.Values
