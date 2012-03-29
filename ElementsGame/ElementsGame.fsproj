@@ -58,8 +58,23 @@
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553" />
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core" />
+    <Reference Include="Nuclex.Input">
+      <HintPath>..\external_libs\Nuclex.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Support">
+      <HintPath>..\external_libs\Nuclex.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.UserInterface">
+      <HintPath>..\external_libs\Nuclex.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\external_libs\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="Ruminate">
       <HintPath>..\external_libs\Ruminate.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX.DirectInput">
+      <HintPath>..\external_libs\SlimDX.DirectInput.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -72,6 +87,8 @@
     <Compile Include="Utils.fs" />
     <Compile Include="Element.fs" />
     <Compile Include="HUD.fs" />
+    <Compile Include="GUI.fs" />
+    <Compile Include="Events.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />

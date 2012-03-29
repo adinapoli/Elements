@@ -1,10 +1,17 @@
 ﻿namespace Elements
 
 open Microsoft.Xna.Framework
+open Microsoft.Xna.Framework.Content
 open Microsoft.Xna.Framework.Graphics
+open Microsoft.Xna.Framework.Input
+
+open Nuclex.UserInterface
+open Nuclex.Input
+
 open Prefabs
 open Elements.Element
 open HUD
+open GUI
 
 module Game =
     type XnaGame() as this =
@@ -12,6 +19,12 @@ module Game =
     
         do this.Content.RootDirectory <- "XnaGameContent"
         let graphicsDeviceManager = new GraphicsDeviceManager(this)
+        let input = new InputManager(this.Services, this.Window.Handle)
+        let gui = new GuiManager(this.Services)
+        do
+            this.Components.Add(input)
+            this.Components.Add(gui)
+            gui.DrawOrder <- 1000
 
         // Manages elements entities
         let elementManager = new ElementsManager(this)
@@ -23,6 +36,7 @@ module Game =
         
 
         override game.Initialize() =
+
             graphicsDeviceManager.GraphicsProfile <- GraphicsProfile.HiDef
             graphicsDeviceManager.PreferredBackBufferWidth <- 1260
             graphicsDeviceManager.PreferredBackBufferHeight <- 735
@@ -44,10 +58,25 @@ module Game =
             if System.Diagnostics.Debugger.IsAttached
                 then debugHud <- new DebugHud(game)      
             
-            //Initialize the real hud
-            hud <- new Hud(game)
-
+            //Call the base initializer
             base.Initialize()
+
+            // Viewport and screen defs
+            let viewport:Viewport = this.GraphicsDevice.Viewport
+            let mainScreen:Screen = new Screen(float32 viewport.Width, 
+                                               float32 viewport.Height)
+
+            //HUD initialization
+            hud <- new Hud(game, mainScreen)
+
+            //GUI initialization
+            gui.Screen <- mainScreen
+            mainScreen.Desktop.Bounds <- new UniRectangle(
+                new UniScalar(0.1f, 0.0f), new UniScalar(0.1f, 0.0f),
+                new UniScalar(0.8f, 0.0f), new UniScalar(0.8f, 0.0f)
+            );
+
+            mainScreen.Desktop.Children.Add(new ElementBrowser())
         
 
         override game.Update gameTime = 
@@ -67,8 +96,9 @@ module Game =
                 then 
                     (debugHud.ComponentsByType("elementCounter")
                     |> Seq.head :?> ElementCounter).Counter <- elementManager.Entities.Count 
-                    debugHud.Update gameTime             
-            
+                    debugHud.Update gameTime
+                               
+            base.Update(gameTime)
             
 
         override game.Draw gameTime = 
@@ -86,6 +116,7 @@ module Game =
             if System.Diagnostics.Debugger.IsAttached
                 then debugHud.Draw gameTime
 
+            base.Draw(gameTime)
             
 
     let game = new XnaGame()

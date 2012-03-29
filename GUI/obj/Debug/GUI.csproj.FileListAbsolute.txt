@@ -1,0 +1,17 @@
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\GUI.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\GUI.pdb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Microsoft.Xna.Framework.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Microsoft.Xna.Framework.Xact.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Nuclex.UserInterface.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Nuclex.Input.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Microsoft.Xna.Framework.xml
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Microsoft.Xna.Framework.Xact.xml
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\obj\Debug\GUI.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\obj\Debug\GUI.pdb
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\Nuclex.Support.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\nunit.framework.dll
+C:\Users\alfredo-windows\Programmazione\F#\Elements\GUI\bin\Debug\SlimDX.DirectInput.dll

@@ -105,15 +105,26 @@ module Prefabs =
 
 
 
+    (*
+     * GUI CONTAINER
+     * An Entity that manages all GUI component. It support
+     * creation and (disposal?) of components.
+     *)
     type GuiContainer(game : Game) =
         inherit GameEntity("guiContainer")
 
         //Specific GUI library coupling
         let gui_:Gui = new Gui(game)
-        do gui_.SetTheme(new EmbeddedTheme(gui_))
+        do 
+            let defaultTheme_ = new EmbeddedTheme(gui_)
+            gui_.SetTheme(defaultTheme_)
+            gui_.AddElement(new Panel(800, 200, 100, 400))
 
         member this.AddElement(guiElement) =
             gui_.AddElement(guiElement)
+
+        member this.RemoveElement(guiElement) =
+            gui_.RemoveElement(guiElement)
         
         override this.Update (gameTime : GameTime) : unit = 
             gui_.Update()

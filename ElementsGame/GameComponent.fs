@@ -59,11 +59,7 @@ open Microsoft.Xna.Framework
             abstract member Update : GameTime -> unit
             abstract member Draw   : GameTime -> unit
 
-        (***************************************************************************
-         *
-        * ELEMENT MANAGER
-        *
-        **************************************************************************)
+
         /// A generic Entities Manager, who uses entities
         [<AbstractClass>]
         type EntitiesManager() =

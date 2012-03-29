@@ -245,8 +245,71 @@
 <member name="">
 
 </member>
+<member name="T:Elements.Events">
+
+</member>
 <member name="">
 
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.GUI">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.HUD.Hud">
+<summary>
+ The HUD.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.HUD.TrashElementBtn">
+<summary>
+ The trash bin.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.HUD.AddElementBtn">
+<summary>
+ A button who models addition of one element. 
+</summary>
 </member>
 <member name="">
 
@@ -269,8 +332,27 @@
 <member name="">
 
 </member>
+<member name="T:Elements.HUD.ElementTracker">
+<summary>
+ Keeps track of discovered elements.
+</summary>
+</member>
 <member name="">
 
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Elements.HUD.DebugHud">
+<summary>
+ The DebugHUD Entity.
+</summary>
 </member>
 <member name="">
 
@@ -293,8 +375,8 @@
 <member name="">
 
 </member>
-<member name="">
-
+<member name="T:Elements.HUD.ElementCounter">
+ <summary>Element Counter. Counts elements on screen.</summary>
 </member>
 <member name="">
 
@@ -317,8 +399,10 @@
 <member name="">
 
 </member>
-<member name="">
-
+<member name="T:Elements.HUD.SpeedWatcher">
+<summary>
+ This class monitors whether the game is running slow.
+</summary>
 </member>
 <member name="">
 
@@ -332,55 +416,15 @@
 <member name="">
 
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
+<member name="T:Elements.HUD.FramerateCounter">
+<summary>
+ This class monitors the framerate.
+</summary>
 </member>
 <member name="T:Elements.HUD">
+
+</member>
+<member name="">
 
 </member>
 <member name="">
