@@ -362,8 +362,11 @@
 <member name="">
 
 </member>
-<member name="">
-
+<member name="T:Elements.HUD.ElementBrowser">
+<summary>
+ An element browser, this encapsulated a GUI panel with (TODO)
+ event list for importing in the main work area.    
+</summary>
 </member>
 <member name="">
 
@@ -474,9 +477,6 @@
 <summary>
  This class monitors the framerate.
 </summary>
-</member>
-<member name="">
-
 </member>
 <member name="T:Elements.HUD">
 
@@ -641,6 +641,9 @@
 
 </member>
 <member name="T:Elements.Prefabs">
+
+</member>
+<member name="">
 
 </member>
 <member name="">
