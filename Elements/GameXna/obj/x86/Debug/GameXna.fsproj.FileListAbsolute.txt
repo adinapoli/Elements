@@ -23,7 +23,6 @@ C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\X
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\HUD\trash_element.xnb
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\Backgrounds\bg_wood_1200_800.xnb
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\XnaGameContent\Media\HUD\add_element_overlay.xnb
-C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\Ruminate.dll
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\Nuclex.Input.dll
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\Nuclex.UserInterface.dll
 C:\Users\alfredo-windows\Programmazione\F#\Elements\Elements\GameXna\bin\Debug\SlimDX.DirectInput.dll

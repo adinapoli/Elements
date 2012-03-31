@@ -26,6 +26,12 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Elements.Components">
 
 </member>
@@ -245,22 +251,40 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Elements.Events">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="T:Elements.GUI">
 
 </member>
 <member name="">
@@ -310,6 +334,36 @@
 <summary>
  A button who models addition of one element. 
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -421,6 +475,9 @@
  This class monitors the framerate.
 </summary>
 </member>
+<member name="">
+
+</member>
 <member name="T:Elements.HUD">
 
 </member>
@@ -505,29 +562,11 @@
 <member name="">
 
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
+<member name="T:Elements.Prefabs.TextComponent">
+<summary>
+ A simple text component that can be displayed on screen,
+ in it&apos;s own SpriteBatch
+</summary>
 </member>
 <member name="">
 

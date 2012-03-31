@@ -7,6 +7,11 @@ open Components
 open Microsoft.Xna.Framework.Input
 open Elements.Entities
 open Nuclex.UserInterface
+open Nuclex.UserInterface.Controls
+open Nuclex.UserInterface.Controls.Desktop
+open Events
+open Utils
+
 
     module HUD =
 
@@ -157,9 +162,71 @@ open Nuclex.UserInterface
             Seq.iter fn this.Components.Values  
 
        
+       /// An element browser, this encapsulated a GUI panel with (TODO)
+       /// event list for importing in the main work area.    
+       type ElementBrowser(screen : Screen, collisionBounds : Rectangle) as this =
+        inherit WindowControl()
+
+        let screen_:Screen = screen
+        let bounds_:Rectangle = collisionBounds
+        let mutable isOpened_:bool = false
+        let id_ : string = "ElementBrowser"
+
+        do
+            this.EnableDragging <- true
+            this.Bounds <- new UniRectangle(us 600.0f, us 10.0f, 
+                                            us 512.0f, us 600.0f)
+            this.Title <- "Element Browser"
+            let okButton = new Nuclex.UserInterface.Controls.Desktop.ButtonControl()
+            let cancelButton = new Nuclex.UserInterface.Controls.Desktop.ButtonControl()
+            okButton.Bounds <- new UniRectangle(new UniScalar(1.0f, -180.0f), 
+                                                new UniScalar(1.0f, -40.0f), 
+                                                us 80.0f, us 24.0f)
+            okButton.Text <- "Ok"
+            okButton.ShortcutButton <- new Nullable<Buttons>(Buttons.A)
+            okButton.Pressed.AddHandler((fun sender args -> 
+                                            isOpened_ <- false
+                                            this.Close()))
+     
+            cancelButton.Bounds <- new UniRectangle(new UniScalar(1.0f, -90.0f), 
+                                                    new UniScalar(1.0f, -40.0f), 
+                                                    us 80.0f, us 24.0f)
+            cancelButton.Text <- "Cancel"
+            cancelButton.ShortcutButton <- new Nullable<Buttons>(Buttons.B)
+            cancelButton.Pressed.AddHandler((fun sender args -> 
+                                                isOpened_ <- false
+                                                this.Close()))
+
+
+            this.Children.Add(okButton)
+            this.Children.Add(cancelButton)
+
+
+        interface IGameComponent with
+            member this.Update (gameTime : GameTime) =
+                match isOpened_ with
+                    |true -> ()
+                    |false ->
+                        let mouseState = Mouse.GetState()
+                        let leftPressed = mouseState.LeftButton = ButtonState.Pressed
+                        let collided = bounds_.Contains(mouseState.X, mouseState.Y)
+                        in match collided && leftPressed  with 
+                            | true ->
+                                isOpened_ <- true
+                                screen_.Desktop.Children.Add(this)
+                            | false ->()
+
+            member this.Id = id_
+            member this.Type = "GUIElement"
+        end
+
+
        /// A button who models addition of one element. 
-       type AddElementBtn(game : Game, xpos : int32, ypos : int32) as this =
+       type AddElementBtn(game : Game, screen: Screen,
+                          xpos : int32, ypos : int32) as this =
         inherit GameEntity("AddElementBtn")
+
+        let screen_ : Screen = screen
 
         do
             let sprite_ = new SmartSprite(game, "Media/HUD/add_element")
@@ -172,18 +239,14 @@ open Nuclex.UserInterface
             this.Attach(sprite_)
             this.Attach(overlay_)
 
+            let success_fn = (fun () -> overlay_.IsVisible <- true)
+            let failure_fn = (fun () -> overlay_.IsVisible <- false)
+            this.Attach(new MouseCollisionHandler("mch", sprite_.Bounds, 
+                                                  success_fn, failure_fn))
+            this.Attach(new ElementBrowser(screen, sprite_.Bounds))
+
         override this.Update(gameTime : GameTime) = 
-            //We should check whether the mouse collide with
-            //the button. If yes, we should also display the overlay.
-            let mouseState = Mouse.GetState()
-            let overlay = this.ComponentById("add_element_overlay")
-            match overlay with
-            | Some(e) -> 
-                let collided = (e :?> SmartSprite).Bounds.Contains(mouseState.X, mouseState.Y)
-                in match collided with 
-                    | true ->  (e :?> SmartSprite).IsVisible <- true
-                    | false -> (e :?> SmartSprite).IsVisible <- false
-            | None -> ()  
+            this.Components.Values |> Seq.iter (fun c -> c.Update gameTime)
 
         override this.Draw(gameTime : GameTime) = 
             for (e:IGameComponent) in this.Components.Values do
@@ -221,7 +284,7 @@ open Nuclex.UserInterface
         do
             let tracker = new ElementTracker(game, 1000, 20)
             tracker.Counter <- 4
-            let addBtn = new AddElementBtn(game, 500,20)
+            let addBtn = new AddElementBtn(game, screen, 500,20)
             let trashBtn = new TrashElementBtn(game, 600,20)
                 
             this.Attach(tracker)

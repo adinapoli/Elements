@@ -11,7 +11,6 @@ open Nuclex.Input
 open Prefabs
 open Elements.Element
 open HUD
-open GUI
 
 module Game =
     type XnaGame() as this =
@@ -74,9 +73,7 @@ module Game =
             mainScreen.Desktop.Bounds <- new UniRectangle(
                 new UniScalar(0.1f, 0.0f), new UniScalar(0.1f, 0.0f),
                 new UniScalar(0.8f, 0.0f), new UniScalar(0.8f, 0.0f)
-            );
-
-            mainScreen.Desktop.Children.Add(new ElementBrowser())
+            ) 
         
 
         override game.Update gameTime = 

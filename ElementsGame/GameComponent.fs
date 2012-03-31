@@ -9,6 +9,9 @@ open Microsoft.Xna.Framework
 
         type IDrawable =
             abstract member Draw : GameTime -> unit
+
+        type IGameHandler =
+            abstract member Handle : unit
         
         type IGameComponent =
             abstract member Update : GameTime -> unit
